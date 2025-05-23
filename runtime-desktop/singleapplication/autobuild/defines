@@ -1,0 +1,7 @@
+PKGNAME=singleapplication
+PKGSEC=libs
+PKGDEP=""
+BUILDDEP="qt-5"
+PKGDES="a replacement of the QtSingleApplication for Qt5 and Qt6"
+
+CMAKE_AFTER="-DSINGLEAPPLICATION_INSTALL:BOOL=ON"

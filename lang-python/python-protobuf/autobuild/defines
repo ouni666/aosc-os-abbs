@@ -1,0 +1,7 @@
+PKGNAME=python-protobuf
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools"
+PKGDES="The Python implementation of Google's Protocol Buffers for efficient data serialization"
+
+ABTYPE=pep517

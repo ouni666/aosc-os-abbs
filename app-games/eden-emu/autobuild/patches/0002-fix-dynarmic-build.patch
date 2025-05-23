@@ -1,0 +1,26 @@
+From 2a34965cb77d08c31e616b179731e2c484577ee1 Mon Sep 17 00:00:00 2001
+From: ouni666 <fangwenbin@vip.qq.com>
+Date: Thu, 15 May 2025 16:26:28 +0800
+Subject: [PATCH] fix dynarmic build
+
+---
+ externals/dynarmic/CMakeLists.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/externals/dynarmic/CMakeLists.txt b/externals/dynarmic/CMakeLists.txt
+index e95050da..ae22a8d8 100644
+--- a/externals/dynarmic/CMakeLists.txt
++++ b/externals/dynarmic/CMakeLists.txt
+@@ -176,6 +176,9 @@ endif()
+ # Pull in externals CMakeLists for libs where available
+ add_subdirectory(externals)
+ 
++# 添加头文件搜索路径
++include_directories(${CMAKE_SOURCE_DIR}/externals/dynarmic/include)
++
+ # Dynarmic project files
+ add_subdirectory(src/dynarmic)
+ if (DYNARMIC_TESTS)
+-- 
+2.49.0
+

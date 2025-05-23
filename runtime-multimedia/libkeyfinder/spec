@@ -1,0 +1,4 @@
+VER=2.2.8
+SRCS="git::commit=tags/$VER::https://github.com/mixxxdj/libkeyfinder"
+CHKSUMS="SKIP"
+CHKUPDATE="anitya::id=15669"

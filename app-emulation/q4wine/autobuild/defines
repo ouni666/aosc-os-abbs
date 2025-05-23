@@ -1,0 +1,27 @@
+PKGNAME=q4wine
+PKGSEC=utils
+PKGDEP="fuseiso gcc-runtime icoutils libunwind qt-6 sudo wget wine winetricks"
+# Note: Wine is provided by LATX on LoongArch.
+PKGDEP__LOONGARCH64="${PKGDEP/wine/latx}"
+PKGDES="A graphical frontend for managing Wine prefixes and applications"
+
+# Note:
+#
+# -DUSE_BZIP2, -DUSE_GZIP are both man page compression options, we do this
+# automatically with Autobuild.
+CMAKE_AFTER=(
+    -DQT6:=OFF
+    -DDEBUG=OFF
+    -DRELEASE=ON
+    -DWITH_ICOUTILS=ON
+    -DWITH_SYSTEM_SINGLEAPP=OFF
+    -DWITH_WINEAPPDB=OFF
+    -DUSE_BZIP2=OFF
+    -DUSE_GZIP=OFF
+    -DWITH_DBUS=ON
+    -DLIBS_ENTRY_PATH=/usr/lib64/q4wine
+)
+
+# FIXME: Wine is currently not available for non-x86/ARM.
+# Note: Only allow building on native and emulated hosts.
+FAIL_ARCH="!(amd64|arm64|i486|loongarch64)"

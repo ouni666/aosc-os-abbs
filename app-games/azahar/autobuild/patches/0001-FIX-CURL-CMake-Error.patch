@@ -1,0 +1,32 @@
+From 719b6bcb68298a881781fa1b703a78b21158cd4a Mon Sep 17 00:00:00 2001
+From: ouni666 <fangwenbin@vip.qq.com>
+Date: Wed, 21 May 2025 16:56:58 +0800
+Subject: [PATCH] FIX CURL CMake Error
+
+---
+ lib/CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lib/CMakeLists.txt b/lib/CMakeLists.txt
+index 02c2f839..7c470e1c 100644
+--- a/lib/CMakeLists.txt
++++ b/lib/CMakeLists.txt
+@@ -149,7 +149,7 @@ find_package(PkgConfig REQUIRED)
+ pkg_search_module(MINIUPNPC REQUIRED miniupnpc IMPORTED_TARGET)
+ target_link_libraries(chiaki-lib PkgConfig::MINIUPNPC)
+ 
+-
++find_package(CURL REQUIRED)
+ if (CHIAKI_ENABLE_SWITCH_CURL)
+ 	target_link_libraries(chiaki-lib CURL::libcurl)
+ elseif (CHIAKI_USE_SYSTEM_CURL)
+@@ -196,4 +196,4 @@ endif()
+ if(CHIAKI_ENABLE_TESTS)
+ 	add_executable(holepunch-test include/chiaki/remote/holepunch.h src/remote/holepunch-test.c)
+ 	target_link_libraries(holepunch-test chiaki-lib)
+-endif()
+\ No newline at end of file
++endif()
+-- 
+2.49.0
+

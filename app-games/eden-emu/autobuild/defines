@@ -1,0 +1,9 @@
+PKGNAME=eden-emu
+PKGSEC=games
+PKGDEP=""
+BUILDDEP="boost catch2 fmt lz4 nlohmann-json openssl  zstd ffmpeg mesa gcc-15 opus sdl2 qt-6 hidapi libzip glslang mbedtls zip unzip nasm enet llvm llvm-20 renderdoc httplib2"
+PKGDES="a emu for switch game"
+
+ABTYPE=cmakeninja
+CMAKE_AFTER="-DYUZU_USE_QT_WEB_ENGINE=ON \
+                            -DCMAKE_BUILD_TYPE:STRING=Release"

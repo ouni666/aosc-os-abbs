@@ -1,0 +1,9 @@
+PKGNAME=chiaki-ng
+PKGSEC=games
+PKGDEP="curl"
+BUILDDEP="libplacebo qt-6 devel-base openssl miniupnpc pypi-protobuf pypi-grpcio-tools"
+PKGDES="A remote play client for PS4/PS5"
+
+CMAKE_AFTER=(
+    '-DCHIAKI_USE_SYSTEM_CURL:STRING=ON'
+)

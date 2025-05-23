@@ -1,0 +1,31 @@
+PKGNAME="azahar"
+PKGSEC="games"
+PKGDEP="enet"
+BUILDDEP="gcc-13 gcc-15 devel-base llvm cmake jack alsa-lib pipewire mesa qt-6 sndio openssl x11-lib imake spirv-tools doxygen audiofile portaudio tslib pulseaudio soundtouch libdecor ffmpeg robin-map zstd vulkan-headers libyuv libusb inih httplib2 glslang faad2 perl-json-webtoken catch2 boost"
+PKGDES="Azahar is an open-source 3DS emulator project based on Citra"
+
+CMAKE_AFTER="-DCMAKE_BUILD_TYPE:STRING=Release \
+                            -DUSE_SYSTEM_ENET=ON \
+                            -DUSE_SYSTEM_BOOST:BOOL=ON \
+                            -DUSE_SYSTEM_CATCH2:BOOL=ON \
+                            -DUSE_SYSTEM_CPP_HTTPLIB:BOOL=OFF \
+                            -DUSE_SYSTEM_CPP_JWT:BOOL=OFF \
+                            -DUSE_SYSTEM_CRYPTOPP:BOOL=OFF \
+                            -DUSE_SYSTEM_CUBEB:BOOL=OFF \
+                            -DUSE_SYSTEM_DYNARMIC:BOOL=OFF \
+                            -DUSE_SYSTEM_FFMPEG_HEADERS:BOOL=OFF \
+                            -DUSE_SYSTEM_FMT:BOOL=OFF \
+                            -DUSE_SYSTEM_GLSLANG:BOOL=ON \
+                            -DUSE_SYSTEM_INIH:BOOL=ON \
+                            -DUSE_SYSTEM_JSON:BOOL=ON \
+                            -DUSE_SYSTEM_LIBS:BOOL=ON \
+                            -DUSE_SYSTEM_LIBUSB:BOOL=ON \
+                            -DUSE_SYSTEM_LODEPNG:BOOL=ON \
+                            -DUSE_SYSTEM_OPENAL:BOOL=ON \
+                            -DUSE_SYSTEM_OPENSSL:BOOL=ON \
+                            -DUSE_SYSTEM_SDL2:BOOL=ON \
+                            -DUSE_SYSTEM_SOUNDTOUCH:BOOL=ON \
+                            -DUSE_SYSTEM_VMA:BOOL=ON \
+                            -DUSE_SYSTEM_VULKAN_HEADERS:BOOL=ON \
+                            -DUSE_SYSTEM_XBYAK:BOOL=ON \
+                            -DUSE_SYSTEM_ZSTD:BOOL=ON"

@@ -1,0 +1,25 @@
+From fecbefffff3a337fc2feb9141945f01b38321bb0 Mon Sep 17 00:00:00 2001
+From: ouni666 <fangwenbin@vip.qq.com>
+Date: Thu, 15 May 2025 15:20:50 +0800
+Subject: [PATCH] fix glad build
+
+---
+ externals/glad/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/externals/glad/CMakeLists.txt b/externals/glad/CMakeLists.txt
+index 0c8e285a4..f9c1a71c1 100644
+--- a/externals/glad/CMakeLists.txt
++++ b/externals/glad/CMakeLists.txt
+@@ -7,7 +7,7 @@ add_library(glad
+     include/glad/glad.h
+ )
+ 
+-create_target_directory_groups(glad)
++#create_target_directory_groups(glad)
+ target_include_directories(glad PUBLIC "include/")
+ 
+ if ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
+-- 
+2.49.0
+

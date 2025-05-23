@@ -1,0 +1,7 @@
+PKGNAME=python-grpcio-tools
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools"
+PKGDES="gRPC tools for generating Python code from Protocol Buffers"
+
+ABTYPE=pep517
