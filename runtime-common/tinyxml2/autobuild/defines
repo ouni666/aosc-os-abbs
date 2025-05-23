@@ -1,0 +1,16 @@
+PKGNAME=tinyxml2
+PKGSEC=libs
+PKGDEP="gcc-runtime"
+PKGDES="A C++ XML parser library"
+
+ABTYPE=cmakeninja
+
+CMAKE_AFTER=(
+    "-DBUILD_TESTING:BOOL=OFF"
+    "-Dtinyxml2_BUILD_TESTING:BOOL=OFF"
+)
+ABHOST=noarch
+NOSTATIC=0
+
+#要启用.so动态库需要指令"-Dtinyxml2_SHARED_LIBS=ON"
+#ABSPLITDBG=0
