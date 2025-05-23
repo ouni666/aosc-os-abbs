@@ -1,6 +1,6 @@
 PKGNAME=aseprite
 PKGSEC=video
-PKGDEP="curl freetype giflib harfbuzz tinyxml2 pixman libpng libjpeg-turbo zlib tar cpio openssl"
+PKGDEP="curl freetype giflib harfbuzz tinyxml2 pixman libpng libjpeg-turbo zlib tar cpio openssl tinyexif"
 BUILDDEP=""
 PKGDES="a program to create animated sprites"
 
@@ -15,7 +15,7 @@ CMAKE_AFTER=(
     "-DUSE_SHARED_GIFLIB:BOOL=ON"
     "-DUSE_SHARED_HARFBUZZ:BOOL=ON"
     "-DUSE_SHARED_TINYXML:BOOL=ON"
-    "-DUSE_SHARED_TINYEXIF:BOOL=OFF"
+    "-DUSE_SHARED_TINYEXIF:BOOL=ON"
     "-DUSE_SHARED_PIXMAN:BOOL=ON"
     "-DUSE_SHARED_LIBPNG:BOOL=ON"
     "-DUSE_SHARED_JPEGLIB:BOOL=ON"
