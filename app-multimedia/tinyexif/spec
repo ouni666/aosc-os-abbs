@@ -1,0 +1,3 @@
+VER=1.0.3
+SRCS="git::commit=tags/$VER::https://github.com/cdcseacave/TinyEXIF"
+CHKSUMS="SKIP"
