@@ -20,3 +20,4 @@ CMAKE_AFTER=(
     "-DUSE_SHARED_LIBPNG:BOOL=ON"
     "-DUSE_SHARED_JPEGLIB:BOOL=ON"
 )
+不能在龙芯loongarch64构建
