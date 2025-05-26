@@ -13,3 +13,4 @@ StartupNotify=true
 Categories=Office;
 EOF
 chmod 644 "$DESKTOP_FILE"
+
