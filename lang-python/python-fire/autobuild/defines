@@ -1,0 +1,8 @@
+PKGNAME=python-fire
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools"
+PKGDES="a library for automatically generating command line interfaces (CLIs) with a single line of code"
+
+ABTYPE=pep517
+ABHOST=noarch

@@ -1,0 +1,4 @@
+VER=0.5.2
+SRCS="pypi::version=$VER::pcre2"
+CHKSUMS="sha256::a70ab0ad3b7ed04abb37405a335b59116eba0328f5891318d3d605072f718bee"
+CHKUPDATE="anitya::id=378353"

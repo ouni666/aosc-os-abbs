@@ -1,0 +1,8 @@
+PKGNAME=python-termcolor
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools hatchling pyproject-hooks hatch-vcs pathspec pluggy trove-classifiers setuptools-scm"
+PKGDES="a python ANSI color formatting for output in terminal"
+
+ABTYPE=pep517
+ABHOST=noarch

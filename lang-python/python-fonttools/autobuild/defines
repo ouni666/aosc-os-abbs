@@ -1,0 +1,8 @@
+PKGNAME=python-fonttools
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools"
+PKGDES="A library for manipulating fonts"
+
+ABTYPE=pep517
+ABHOST=noarch

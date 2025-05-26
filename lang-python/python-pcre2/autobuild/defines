@@ -1,0 +1,7 @@
+PKGNAME=python-pcre2
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools"
+PKGDES="Python bindings for the PCRE2 "
+
+ABTYPE=pep517

@@ -1,0 +1,8 @@
+PKGNAME=python-docx
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools"
+PKGDES="a Python library for reading, creating, and updating Microsoft Word 2007+ (.docx) file"
+
+ABTYPE=pep517
+ABHOST=noarch
