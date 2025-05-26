@@ -1,6 +1,6 @@
 PKGNAME=python-pdf2docx
 PKGSEC=python
-PKGDEP="python-3 python-pymupdf python-docx python-fonttools python-fire python-termcolor"
+PKGDEP="python-3 python-pymupdf python-docx python-fonttools python-fire python-termcolor lxml opencv"
 BUILDDEP="setuptools"
 PKGDES="A Python library for converting PDF to DOCX"
 
