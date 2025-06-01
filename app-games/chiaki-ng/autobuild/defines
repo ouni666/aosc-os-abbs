@@ -1,7 +1,7 @@
 PKGNAME=chiaki-ng
 PKGSEC=games
-PKGDEP="curl"
-BUILDDEP="libplacebo qt-6 devel-base openssl miniupnpc pypi-protobuf pypi-grpcio-tools"
+PKGDEP="libplacebo curl qt-6 openssl miniupnpc python-protobuf"
+BUILDDEP="python-grpcio-tools"
 PKGDES="A remote play client for PS4/PS5"
 
 CMAKE_AFTER=(
