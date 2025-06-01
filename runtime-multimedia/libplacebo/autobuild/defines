@@ -1,4 +1,5 @@
 PKGNAME=libplacebo
 PKGDES="Core rendering algorithms of mpv as a library"
 PKGSEC=video
-PKGDEP="gcc-runtime shaderc libunwind lcms2 xz zlib xxhash glfw vulkan vulkan-headers fast-float sdl2 sdl2-image ffmpeg"
+PKGDEP="gcc-runtime shaderc libunwind lcms2 xz zlib xxhash glfw vulkan sdl2 sdl2-image ffmpeg"
+
