@@ -1,6 +1,6 @@
 PKGNAME=python-swig
 PKGSEC=python
-PKGDEP="python-3 python-pcre2"
+PKGDEP="python-3"
 BUILDDEP="setuptools scikit-build-core"
 PKGDES="A python Generator for scripting interfaces to C/C++ code"
 

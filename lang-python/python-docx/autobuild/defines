@@ -1,6 +1,6 @@
 PKGNAME=python-docx
 PKGSEC=python
-PKGDEP="python-3"
+PKGDEP="python-3 lxml typing-extensions"
 BUILDDEP="setuptools"
 PKGDES="a Python library for reading, creating, and updating Microsoft Word 2007+ (.docx) file"
 
