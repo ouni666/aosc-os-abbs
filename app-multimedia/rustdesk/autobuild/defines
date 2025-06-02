@@ -1,0 +1,5 @@
+PKGNAME="rustdesk"
+PKGSEC="video"
+PKGDEP="gdk-pixbuf gtk-3 xdotool libxcb"
+BUILDDEP="rustc llvm pkgconf"
+PKGDES="An open-source remote desktop application"
