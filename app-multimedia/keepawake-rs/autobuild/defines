@@ -1,0 +1,7 @@
+PKGNAME="keepawake-rs"
+PKGSEC="video"
+PKGDEP=""
+BUILDDEP="rustc llvm"
+PKGDES="An"
+
+ABHOST=noarch
