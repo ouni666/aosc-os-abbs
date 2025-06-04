@@ -1,0 +1,3 @@
+VER=0.5.30
+SRCS="git::commit=tags/PakePlus-v$VER::https://github.com/Sjj1024/PakePlus"
+CHKSUMS="SKIP"

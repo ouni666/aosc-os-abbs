@@ -1,0 +1,5 @@
+abinfo "Building pakeplus ..."
+#pnpm i
+#pnpm run build
+cd src-tauri
+cargo run

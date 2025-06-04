@@ -1,0 +1,7 @@
+PKGNAME="pakeplus"
+PKGSEC="web"
+PKGDEP=""
+BUILDDEP="nodejs rustc llvm gdk-pixbuf gtk-3 libsoup-3 openjdk-24 webkit2gtk"
+PKGDES="A cross-platform application for converting web pages to desktop programs"
+
+USECLANG=1
