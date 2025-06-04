@@ -1,0 +1,2 @@
+abinfo "Installing pre-built Web assets ..."
+cargo build

@@ -1,0 +1,13 @@
+abinfo "Installing .desktop entry ..."
+DESKTOP_FILE="$PKGDIR"/usr/share/applications/PakePlus.desktop
+mkdir -pv "$(dirname "$DESKTOP_FILE")"
+cat > "$DESKTOP_FILE" << EOF
+[Desktop Entry]
+Name=PakePlus
+Exec=/usr/lib/$PKGNAME/PakePlus
+Icon=PakePlus
+Terminal=false
+Type=Application
+Categories=Game;
+EOF
+chmod 644 "$DESKTOP_FILE"
