@@ -1,0 +1,7 @@
+PKGNAME="bongocat"
+PKGSEC="games"
+PKGDEP="gdk-pixbuf gtk-3 libsoup-3 openjdk-24 webkit2gtk"
+BUILDDEP="rustc llvm"
+PKGDES="cat"
+
+USECLANG=1
