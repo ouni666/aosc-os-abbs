@@ -1,0 +1,8 @@
+PKGNAME=opencolorio
+PKGSEC=libs
+PKGDEP="freeglut glew glu openimageio python-3 yaml-cpp tinyxml lcms2 expat imath minizip openexr"
+BUILDDEP="cmake python-3 pybind11"
+PKGDES="A color management framework for visual effects and animation"
+
+ABTYPE=cmakeninja
+NOSTATIC=0

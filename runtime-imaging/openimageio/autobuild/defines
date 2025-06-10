@@ -1,0 +1,16 @@
+PKGNAME=openimageio
+PKGSEC=libs
+PKGDEP="boost glew jasper libraw libtiff opencolorio opencv openexr openssl pugixml libheif tbb openvdb python-3 giflib imath freetype openjpeg libpng libwebp pybind11 hdf5 ptex-static"
+BUILDDEP="cmake python-3 boost mesa fontconfig robin-map"
+PKGDES="A library for reading and writing images, including classes, utilities, and applications"
+
+ABTYPE=cmakeninja
+CMAKE_AFTER=(
+    -DUSE_PYTHON=ON
+    -DOIIO_BUILD_TESTS=ON
+    -DOIIO_BUILD_TOOLS=ON
+    -DBUILD_MISSING_FMT=OFF
+    -DINTERNALIZE_FMT=OFF
+    -DUSE_EXTERNAL_PUGIXML=ON
+    -DSTOP_ON_WARNING=OFF
+)
