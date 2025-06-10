@@ -1,6 +1,6 @@
 PKGNAME=openusd
 PKGSEC=libs
-PKGDEP="opensubdiv-static openexr openimageio opencolorio pyopengl ptex python-3 alembic hdf5 boost tbb zeromq pyside6 glew imath jemalloc libglvnd materialx openvdb  numpy"
+PKGDEP="opensubdiv-static openexr openimageio opencolorio pyopengl ptex-static python-3 alembic hdf5 boost tbb zeromq pyside6 glew imath jemalloc libglvnd materialx openvdb  numpy openshadinglanguage"
 BUILDDEP="cmake ninja gperf bison flex help2man jinja2 boost"
 PKGDES="an efficient, scalable system for authoring"
 
