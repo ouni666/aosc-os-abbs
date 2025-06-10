@@ -1,0 +1,6 @@
+abinfo "fix ..."
+rm "$PKGDIR"/usr/build-scripts/serialize-bc.py
+rmdir "$PKGDIR"/usr/build-scripts
+rm "$PKGDIR"/usr/cmake/llvm_macros.cmake
+rmdir "$PKGDIR"/usr/cmake
+install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md

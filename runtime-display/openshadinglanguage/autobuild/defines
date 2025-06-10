@@ -1,7 +1,7 @@
 PKGNAME=openshadinglanguage
 PKGSEC=libs
 PKGDEP="openimageio ilmbase imath flex pugixml partio numpy freetype libpng libtiff zlib ncurses qt-6"
-BUILDDEP="llvm pybind11 python-3"
+BUILDDEP="llvm pybind11 python-3 robin-map"
 PKGDES="Advanced shading language for production GI renderers"
 
 
