@@ -16,3 +16,4 @@ CMAKE_AFTER=(
 )
 
 ABTYPE=cmakeninja
+NOSTATIC=0
