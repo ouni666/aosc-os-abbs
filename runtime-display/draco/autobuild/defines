@@ -4,7 +4,7 @@ PKGDES="Geometry compression and decompression library"
 PKGDEP="gcc-runtime glibc"
 
 CMAKE_AFTER=(
-    -DDRACO_TESTS=OFF
+    -DDRACO_TESTS=ON
     -DBUILD_SHARED_LIBS=ON
     -DDRACO_TRANSCODER_SUPPORTED=ON
     -DDRACO_DECODER_ATTRIBUTE_DEDUPLICATION=ON
