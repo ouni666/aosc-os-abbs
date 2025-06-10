@@ -1,6 +1,6 @@
 PKGNAME=opensubdiv-static
 PKGSEC=libs
-PKGDEP="tbb ptex zlib glew glfw libcl"
+PKGDEP="tbb ptex-static zlib glew glfw libcl"
 BUILDDEP="cmake doxygen opencl-registry-api docutils pygments"
 BUILDDEP__CUDA="${BUILDDEP} cuda"
 BUILDDEP__AMD64="${BUILDDEP__CUDA}"
