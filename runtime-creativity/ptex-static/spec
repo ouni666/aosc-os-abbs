@@ -1,0 +1,4 @@
+VER=2.4.3
+SRCS="git::commit=tags/v$VER::https://github.com/wdas/ptex"
+CHKSUMS="SKIP"
+CHKUPDATE="anitya::id=138280"
