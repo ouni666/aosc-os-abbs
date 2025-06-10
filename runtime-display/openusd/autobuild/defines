@@ -1,0 +1,44 @@
+PKGNAME=openusd
+PKGSEC=libs
+PKGDEP="opensubdiv-static openexr openimageio opencolorio pyopengl ptex python-3 alembic hdf5 boost tbb zeromq pyside6 glew imath jemalloc libglvnd materialx openvdb  numpy"
+BUILDDEP="cmake ninja gperf bison flex help2man jinja2 boost"
+PKGDES="an efficient, scalable system for authoring"
+
+# Note: The build_usd.py script supplied by this package's source is really
+# a wrapper for a series of custom build procedures.
+
+ABTYPE=cmakeninja
+
+CMAKE_AFTER=(
+    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_SKIP_INSTALL_RPATH=ON
+    -DCMAKE_SKIP_RPATH=ON
+    -DPYSIDEUICBINARY=/usr/lib/qt6/uic
+    -DPYSIDE_AVAILABLE=ON
+    -DPYTHON_EXECUTABLE=/usr/bin/python
+    -DPXR_INSTALL_LOCATION=/usr/lib/usd/plugin
+    -DPXR_BUILD_DOCUMENTATION=OFF
+    -DPXR_BUILD_EXAMPLES=OFF
+    -DPXR_BUILD_IMAGING=ON
+    -DPXR_BUILD_MONOLITHIC=ON
+    -DPXR_BUILD_TESTS=OFF
+    -DPXR_BUILD_TUTORIALS=OFF
+    -DPXR_BUILD_USD_IMAGING=ON
+    -DPXR_BUILD_USD_TOOLS=ON
+    -DPXR_BUILD_USDVIEW=ON
+    -DPXR_VALIDATE_GENERATED_CODE=OFF
+    -DPXR_INSTALL_LOCATION=/usr/lib/usd/plugin
+    -DPXR_MALLOC_LIBRARY=/usr/lib/libjemalloc.so
+    -DPXR_BUILD_ALEMBIC_PLUGIN=ON
+    -DPXR_BUILD_DRACO_PLUGIN=ON
+    -DPXR_BUILD_EMBREE_PLUGIN=OFF
+    -DPXR_BUILD_OPENCOLORIO_PLUGIN=ON
+    -DPXR_BUILD_OPENIMAGEIO_PLUGIN=ON
+    -DPXR_BUILD_PRMAN_PLUGIN=OFF
+    -DPXR_ENABLE_MATERIALX_SUPPORT=ON
+    -DPXR_ENABLE_OPENVDB_SUPPORT=ON
+    -DPXR_ENABLE_HDF5_SUPPORT=ON
+    -DPXR_ENABLE_PTEX_SUPPORT=OFF
+    -DPXR_ENABLE_OSL_SUPPORT=ON
+    -DPXR_ENABLE_PYTHON_SUPPORT=ON
+)

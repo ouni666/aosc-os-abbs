@@ -1,0 +1,3 @@
+PKGNAME=libaec
+PKGSEC=libs
+PKGDES="Adaptive Entropy Coding library"

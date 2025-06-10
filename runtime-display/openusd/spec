@@ -1,0 +1,4 @@
+VER=25.05.01
+SRCS="git::commit=tags/v$VER::https://github.com/PixarAnimationStudios/OpenUSD"
+CHKSUMS="SKIP"
+
