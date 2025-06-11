@@ -47,3 +47,4 @@ CMAKE_AFTER=(
 #https://gitlab.archlinux.org/archlinux/packaging/packages/usd/-/blob/main/usd-embree42.patch
 #未引入的archlinux补丁，内容没问题，没法直接用。和aosc os上下错行三行.内容多达2000行代码，不知道怎么搬运了
 #https://gitlab.archlinux.org/archlinux/packaging/packages/usd/-/blob/main/usd-tbb.patch
+#暂时编译失败，补丁太多
