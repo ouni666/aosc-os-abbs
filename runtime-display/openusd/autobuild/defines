@@ -1,19 +1,17 @@
 PKGNAME=openusd
 PKGSEC=libs
-PKGDEP="opensubdiv-static openexr openimageio opencolorio pyopengl ptex-static python-3 alembic hdf5 boost tbb zeromq pyside6 glew imath jemalloc libglvnd materialx openvdb  numpy openshadinglanguage"
+PKGDEP="opensubdiv-static openexr openimageio opencolorio pyopengl ptex-static python-3 alembic hdf5 boost tbb zeromq pyside6 glew imath jemalloc libglvnd materialx openvdb numpy openshadinglanguage embree"
 BUILDDEP="cmake ninja gperf bison flex help2man jinja2 boost"
 PKGDES="an efficient, scalable system for authoring"
-
-# Note: The build_usd.py script supplied by this package's source is really
-# a wrapper for a series of custom build procedures.
 
 ABTYPE=cmakeninja
 
 CMAKE_AFTER=(
+    -Wno-dev
     -DCMAKE_INSTALL_PREFIX=/usr
     -DCMAKE_SKIP_INSTALL_RPATH=ON
     -DCMAKE_SKIP_RPATH=ON
-    -DPYSIDEUICBINARY=/usr/lib/qt6/uic
+    -DPYSIDEUICBINARY=/usr/lib/qt6/uic  #解决找不到pyside6的uic等
     -DPYSIDE_AVAILABLE=ON
     -DPYTHON_EXECUTABLE=/usr/bin/python
     -DPXR_INSTALL_LOCATION=/usr/lib/usd/plugin
@@ -26,7 +24,7 @@ CMAKE_AFTER=(
     -DPXR_BUILD_USD_IMAGING=ON
     -DPXR_BUILD_USD_TOOLS=ON
     -DPXR_BUILD_USDVIEW=ON
-    -DPXR_VALIDATE_GENERATED_CODE=ON
+    -DPXR_VALIDATE_GENERATED_CODE=OFF
     -DPXR_ENABLE_METAL_SUPPORT=OFF
     -DPXR_ENABLE_VULKAN_SUPPORT=OFF
     -DPXR_INSTALL_LOCATION=/usr/lib/usd/plugin
@@ -45,3 +43,7 @@ CMAKE_AFTER=(
     -DPXR_ENABLE_PYTHON_SUPPORT=ON
 )
 
+#已经引入的archlinux补丁
+#https://gitlab.archlinux.org/archlinux/packaging/packages/usd/-/blob/main/usd-embree42.patch
+#未引入的archlinux补丁，内容没问题，没法直接用。和aosc os上下错行三行.内容多达2000行代码，不知道怎么搬运了
+#https://gitlab.archlinux.org/archlinux/packaging/packages/usd/-/blob/main/usd-tbb.patch
