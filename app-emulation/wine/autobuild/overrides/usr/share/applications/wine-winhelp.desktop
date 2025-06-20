@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Wine Help
+Comment=Viewer for Windows Help files
+Name[zh_CN]=Wine 帮助查看器
+Comment[zh_CN]=Windows Help 文件查看器
+Exec=wine winhlp32
+Icon=winhelp
+Terminal=false
+Type=Application
+Categories=X-Wine;

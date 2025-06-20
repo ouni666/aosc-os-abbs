@@ -1,0 +1,16 @@
+__GECKO_VER=2.47.4
+__MONO_VER=10.1.0
+UPSTREAM_VER=10.10
+VER=${UPSTREAM_VER}+gecko${__GECKO_VER}+mono${__MONO_VER}
+SRCS="tbl::https://dl.winehq.org/wine/source/${UPSTREAM_VER%%.*}.x/wine-${UPSTREAM_VER}.tar.xz \
+      git::rename=wine-staging;commit=tags/v${UPSTREAM_VER}::https://github.com/wine-staging/wine-staging \
+      tbl::rename=wine-gecko-${__GECKO_VER}-x86.tar.xz::https://dl.winehq.org/wine/wine-gecko/${__GECKO_VER}/wine-gecko-${__GECKO_VER}-x86.tar.xz \
+      tbl::rename=wine-gecko-${__GECKO_VER}-x86_64.tar.xz::https://dl.winehq.org/wine/wine-gecko/${__GECKO_VER}/wine-gecko-${__GECKO_VER}-x86_64.tar.xz \
+      tbl::rename=wine-mono-${__MONO_VER}-x86.tar.xz::https://dl.winehq.org/wine/wine-mono/${__MONO_VER}/wine-mono-${__MONO_VER}-x86.tar.xz"
+CHKSUMS="sha256::e76466a5ca3197f399ddf8069b0a79e5eb2dffe5b3b7db9eb7272288330c8596 \
+         SKIP \
+         sha256::2cfc8d5c948602e21eff8a78613e1826f2d033df9672cace87fed56e8310afb6 \
+         sha256::fd88fc7e537d058d7a8abf0c1ebc90c574892a466de86706a26d254710a82814 \
+         sha256::7f4763edd350503a3a70b1bbbdbff944f1f4bb1552f0731957363d162ce2589a"
+CHKUPDATE="anitya::id=15657"
+SUBDIR="wine-${UPSTREAM_VER}"

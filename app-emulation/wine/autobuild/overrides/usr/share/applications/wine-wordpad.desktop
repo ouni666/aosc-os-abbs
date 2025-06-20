@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Wine WordPad
+Comment=Rich text file editor for Wine
+Name[zh_CN]=Wine 写字板
+Comment[zh_CN]=Wine 富文本编辑器
+Exec=wordpad
+Icon=wordpad
+Terminal=false
+Type=Application
+Categories=X-Wine;

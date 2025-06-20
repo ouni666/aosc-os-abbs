@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Wine Configuration
+Comment=Utility to configure Wine preferences and parameters
+Name[zh_CN]=Wine 设置
+Comment[zh_CN]=Wine 参数与首选项配置实用工具
+Exec=winecfg
+Icon=winecfg
+Terminal=false
+Type=Application
+Categories=X-Wine;

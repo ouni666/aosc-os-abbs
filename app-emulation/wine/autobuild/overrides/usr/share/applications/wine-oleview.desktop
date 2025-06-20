@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Wine OLE View
+Comment=View Windows OLE Properties
+Name[zh_CN]=Wine OLE 查看器
+Comment[zh_CN]=查看 Windows OLE 属性
+Exec=wine oleview
+Icon=wine
+Terminal=false
+Type=Application
+Categories=X-Wine;
