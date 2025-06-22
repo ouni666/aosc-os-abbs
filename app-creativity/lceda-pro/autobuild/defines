@@ -1,0 +1,5 @@
+PKGNAME=lceda-pro
+PKGSEC=graphics
+PKGDES="Jia Li Chuang Eda Pro App"
+
+ABSPLITDBG=0

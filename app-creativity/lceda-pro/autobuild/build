@@ -1,0 +1,20 @@
+abinfo "installing ..."
+mkdir -pv "$PKGDIR"/usr/share/lceda-pro/
+rsync -avz $SRCDIR/ "$PKGDIR"/usr/share/lceda-pro/
+
+abinfo "Installing .desktop entry ..."
+DESKTOP_FILE="$PKGDIR"/usr/share/applications/lceda-pro.desktop
+mkdir -pv "$(dirname "$DESKTOP_FILE")"
+cat > "$DESKTOP_FILE" << EOF
+[Desktop Entry]
+Categories=Development;Electronics;
+Comment=免费、强大、易用的在线电路设计软件
+Exec=/usr/share/lceda-pro/lceda-pro %f --no-sandbox
+Keywords=PCB;LCEDA;嘉立创EDA;LC;EDA
+GenericName=嘉立创EDA(专业版)
+Icon=/opt/lceda-pro/icon/icon_128x128.png
+Name=嘉立创EDA(专业版)
+Type=Application
+Name[en_US]=嘉立创EDA(专业版)
+MimeType=application/eprj
+

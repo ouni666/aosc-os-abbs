@@ -1,0 +1,3 @@
+VER=2.2.39.2
+SRCS="tbl::https://image.lceda.cn/files/lceda-pro-linux-x64-$VER.zip"
+CHKSUMS="sha256::a6dbb7ffc9c05fe6baa8419271e818ae6b74c4e334941959fed05036266bd4db"
