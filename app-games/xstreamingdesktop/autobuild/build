@@ -1,8 +1,6 @@
 abinfo "Building xstreamingdesktop ..."
 # Note:Use third-party electron to support loongarch64
-if ab_match_arch loongarch64; then ELECTRON_MIRROR="https://github.com/darkyzhou/electron-loong64/releases/download/"
-ELECTRON_BUILDER_BINARIES_MIRROR="https://github.com/darkyzhou/electron-builder-loong64/tree/v24.13.3-loong64"
-yarn add electron@v34.4.1 electron-builder --dev
+if ab_match_arch loongarch64; then ELECTRON_MIRROR="https://github.com/darkyzhou/electron-loong64/releases/download/" electron_use_remote_checksums=1 yarn install electron@35.4.0
 yarn build
 abinfo "Installing xstreamingdesktop ..."
 mkdir -pv "$PKGDIR"/usr/lib/xstreamingdesktop/
@@ -29,6 +27,7 @@ Type=Application
 Categories=Game;
 EOF
 chmod 644 "$DESKTOP_FILE"
+
 fi
 
 yarn install
