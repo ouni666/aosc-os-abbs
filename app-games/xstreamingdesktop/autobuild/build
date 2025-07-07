@@ -1,10 +1,13 @@
-abinfo "Building xstreamingdesktop ..."
 # Note:Use third-party electron to support loongarch64
-if ab_match_arch loongarch64; then ELECTRON_MIRROR="https://github.com/darkyzhou/electron-loong64/releases/download/" electron_use_remote_checksums=1 yarn add electron@35.4.0
-ELECTRON_MIRROR="https://github.com/darkyzhou/electron-loong64/releases/download/" yarn build 
+if ab_match_arch loongarch64; then
+
+abinfo "Building xstreamingdesktop ..."
+ELECTRON_MIRROR="https://github.com/darkyzhou/electron-loong64/releases/download/" electron_use_remote_checksums=1 yarn add electron@35.4.0
+ELECTRON_MIRROR="https://github.com/darkyzhou/electron-loong64/releases/download/" yarn build
+
 abinfo "Installing xstreamingdesktop ..."
 mkdir -pv "$PKGDIR"/usr/lib/xstreamingdesktop/
-cp -av "$SRCDIR"/dist/linux-unpacked/* "$PKGDIR"/usr/lib/xstreamingdesktop
+cp -av "$SRCDIR"/dist/linux-loong64-unpacked/* "$PKGDIR"/usr/lib/xstreamingdesktop
 chmod +x "$PKGDIR"/usr/lib/xstreamingdesktop/xstreaming
 
 mkdir -pv "$PKGDIR"/usr/bin
@@ -27,8 +30,13 @@ Type=Application
 Categories=Game;
 EOF
 chmod 644 "$DESKTOP_FILE"
+
 fi
 
+# Note:Use electron to amd64
+if ab_match_arch amd64; then
+
+abinfo "Building xstreamingdesktop ..."
 yarn install
 yarn build
 
@@ -57,3 +65,5 @@ Type=Application
 Categories=Game;
 EOF
 chmod 644 "$DESKTOP_FILE"
+
+fi
