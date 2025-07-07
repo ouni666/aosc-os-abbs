@@ -1,4 +1,4 @@
-VER=1.71.0
+VER=1.73.1
 SRCS="pypi::version=$VER::grpcio-tools"
-CHKSUMS="sha256::38dba8e0d5e0fb23a034e09644fdc6ed862be2371887eee54901999e8f6792a8"
+CHKSUMS="sha256::6e06adec3b0870f5947953b0ef8dbdf2cebcdff61fb1fe08120cc7483c7978aa"
 CHKUPDATE="anitya::id=30536"
