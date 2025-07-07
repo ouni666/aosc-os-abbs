@@ -1,5 +1,5 @@
 VER=1.9.8
 REL=2
-SRCS="git::commit=d469d8bfe4dbe9caf4b981c93dd2c3a887524cba::https://github.com/streetpea/chiaki-ng"
+SRCS="git::commit=0f7daf584e8fb95d9e9f9d17770d106f78787529::https://github.com/streetpea/chiaki-ng"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=374565"
