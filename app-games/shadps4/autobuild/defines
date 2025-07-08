@@ -1,0 +1,9 @@
+PKGNAME=shadps4
+PKGSEC=games
+PKGDEP="qt-6 sdl2 vulkan"
+BUILDDEP="cmake llvm devel-base "
+PKGDES="A PlayStation 4 emulator"
+
+CMAKE_AFTER=(
+    '-DENABLE_QT_GUI=ON'
+)

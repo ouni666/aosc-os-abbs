@@ -1,0 +1,3 @@
+VER=0.10.0
+SRCS="git::commit=tags/v.$VER::https://github.com/shadps4-emu/shadPS4"
+CHKSUMS="SKIP"
