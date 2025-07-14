@@ -1,0 +1,7 @@
+PKGNAME=zluda
+PKGSEC=non-free/devel
+PKGDES="zluda"
+PKGDEP="python-3 rocm-base"
+BUILDDEP="cmake rustc llvm"
+
+USECLANG=1
