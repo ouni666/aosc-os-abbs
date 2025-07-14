@@ -2,29 +2,32 @@ abinfo "Building Zluda ..."
 cargo xtask --release
 
 abinfo "Installing Zluda ..."
-install -dvm755 "$SRCDIR"/target/release/dump_nvidia/* "$PKGDIR"/usr/lib/dump_nvidia/
-install -dvm755 "$SRCDIR"/target/release/dump/* "$PKGDIR"/usr/lib/dump/
-install -dvm755 "$SRCDIR"/target/release/libzluda_dump.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libnvcuda.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcuda.so.1 "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcuda.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libzluda_dump_blas.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libzluda_dump_sparse.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libzluda_dump_dnn.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libzluda_dump_blaslt.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libzluda_dump_fft.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libnvml.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libnvidia-ml.so.1 "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libnvidia-ml.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcusparse.so.12 "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcusparse.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcufft.so.11 "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcufft.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcublas.so.12 "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcublas.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcudnn64_9.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcudnn.so.9 "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcudnn.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcublasLt.so.12 "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcublaslt.so "$PKGDIR"/usr/lib/
-install -dvm755 "$SRCDIR"/target/release/libcublasLt.so "$PKGDIR"/usr/lib/
+install -dvm755 "$PKGDIR"/usr/lib/dump_nvidia/
+install -dvm755 "$PKGDIR"/usr/lib/dump/
+cp -av "$SRCDIR"/target/release/dump_nvidia/* "$PKGDIR"/usr/lib/dump_nvidia/
+cp -av "$SRCDIR"/target/release/dump/* "$PKGDIR"/usr/lib/dump/
+
+install -vm755 "$SRCDIR"/target/release/libzluda_dump.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libnvcuda.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcuda.so.1 "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcuda.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libzluda_dump_blas.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libzluda_dump_sparse.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libzluda_dump_dnn.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libzluda_dump_blaslt.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libzluda_dump_fft.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libnvml.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libnvidia-ml.so.1 "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libnvidia-ml.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcusparse.so.12 "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcusparse.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcufft.so.11 "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcufft.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcublas.so.12 "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcublas.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcudnn64_9.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcudnn.so.9 "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcudnn.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcublasLt.so.12 "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcublaslt.so "$PKGDIR"/usr/lib/
+install -vm755 "$SRCDIR"/target/release/libcublasLt.so "$PKGDIR"/usr/lib/
