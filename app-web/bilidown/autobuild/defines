@@ -1,0 +1,5 @@
+PKGNAME=bilidown
+PKGSEC=devel
+PKGDEP=""
+BUILDDEP="nodejs-22 go"
+PKGDES="Bilidown"

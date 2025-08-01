@@ -1,0 +1,7 @@
+abinfo "Building bilidown ..."
+cd bilidown/client
+pnpm install
+pnpm build
+cd ../server
+go mod tidy
+CGO_ENABLED=1 go build

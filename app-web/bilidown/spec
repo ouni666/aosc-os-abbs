@@ -1,0 +1,3 @@
+VER=2.0.15
+SRCS="git::commit=tags/v$VER::https://github.com/iuroc/bilidown"
+CHKSUMS="SKIP"
