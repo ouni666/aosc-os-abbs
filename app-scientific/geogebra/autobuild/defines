@@ -1,4 +1,7 @@
 PKGNAME=geogebra
 PKGSEC=science
-PKGDEP="openjdk"
-PKGDES="Real-time interactive graphing calculator and visualizer for geometry, algebra, and calculus"
+BUILDDEP="openjdk-11"
+PKGDES="Dynamic mathematics software with interactive graphics, algebra and spreadsheet"
+
+ABSPLITDBG=0
+FAIL_ARCH="!(amd64)"
