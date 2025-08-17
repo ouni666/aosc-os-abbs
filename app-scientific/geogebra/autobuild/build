@@ -1,0 +1,4 @@
+abinfo "Installing geogebra ..."
+JAVA_HOME=/usr/lib/java-11 gradle build
+gradlew :desktop:run
+

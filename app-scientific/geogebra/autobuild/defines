@@ -1,0 +1,4 @@
+PKGNAME=geogebra
+PKGSEC=science
+PKGDEP="openjdk"
+PKGDES="Real-time interactive graphing calculator and visualizer for geometry, algebra, and calculus"
