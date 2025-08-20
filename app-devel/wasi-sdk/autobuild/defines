@@ -1,0 +1,11 @@
+PKGNAME=wasi-sdk
+PKGSEC=libs
+PKGDEP=""
+BUILDDEP="llvm python-3"
+PKGDES="WASI-enabled WebAssembly C/C++ toolchain"
+
+
+
+CMAKE_AFTER=(
+  "-DWASI_SDK_BUILD_TOOLCHAIN=ON"
+)

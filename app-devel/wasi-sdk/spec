@@ -1,0 +1,4 @@
+VER=27
+SRCS="git::commit=tags/wasi-sdk-$VER::https://github.com/WebAssembly/wasi-sdk"
+CHKSUMS="SKIP"
+CHKUPDATE="anitya::id=383308"
