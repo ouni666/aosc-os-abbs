@@ -1,0 +1,8 @@
+PKGNAME=geogebra5
+PKGSEC=science
+PKGDEP=openjdk
+BUILDDEP="openjdk-11"
+PKGDES="Dynamic mathematics software with interactive graphics, algebra and spreadsheet"
+
+ABSPLITDBG=0
+FAIL_ARCH="!(amd64)"
