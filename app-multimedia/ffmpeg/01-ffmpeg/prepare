@@ -1,0 +1,5 @@
+if ab_match_arch loongson3; then
+    abinfo "Enabling LoongMMI optimization ..."
+    export CFLAGS="$CFLAGS -mloongson-mmi"
+    export CXXFLAGS="$CXXFLAGS -mloongson-mmi"
+fi
