@@ -1,0 +1,16 @@
+PKGNAME=whisper.cpp
+PKGSEC=misc
+PKGDEP="vulkan-loader sdl2 ggml"
+BUILDDEP="shaderc vulkan-headers"
+PKGDES="Utility and library to work with OpenAI's automatic speech recognition model"
+
+CMAKE_AFTER=(
+  "-DGGML_VULKAN=1"
+  "-DWHISPER_SDL2=ON"
+  "-DWHISPER_USE_SYSTEM_GGML=ON"
+)
+
+# FIXME: fix riscv64 build
+# lto1: fatal error: target specific builtin not available
+# /usr/bin/ld: error: lto-wrapper failed
+NOLTO__RISCV64=1
