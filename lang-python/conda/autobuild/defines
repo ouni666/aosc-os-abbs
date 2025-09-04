@@ -1,0 +1,9 @@
+PKGNAME=conda
+PKGSEC=python
+PKGDEP="python-3 ruamel-yaml frozendict boltons pluggy"
+BUILDDEP="setuptools hatchling hatch-vcs setuptools-scm"
+PKGDES="Conda is a cross-platform, language-agnostic binary package manager"
+
+ABTYPE=pep517
+
+ABHOST=noarch

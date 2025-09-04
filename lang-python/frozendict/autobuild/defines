@@ -1,0 +1,7 @@
+PKGNAME=frozendict
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools"
+PKGDES="A simple immutable dictionary for Python"
+
+ABTYPE=pep517

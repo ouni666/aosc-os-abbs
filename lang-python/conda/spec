@@ -1,0 +1,4 @@
+VER=25.7.0
+SRCS="git::commit=tags/$VER::https://github.com/conda/conda"
+CHKSUMS="SKIP"
+CHKUPDATE="anitya::id=8326"

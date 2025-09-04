@@ -1,0 +1,9 @@
+PKGNAME=boltons
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="setuptools"
+PKGDES="boltons"
+
+ABTYPE=pep517
+
+ABHOST=noarch

@@ -1,0 +1,4 @@
+VER=2.4.6
+SRCS="pypi::version=$VER::frozendict"
+CHKSUMS="sha256::df7cd16470fbd26fc4969a208efadc46319334eb97def1ddf48919b351192b8e"
+CHKUPDATE="anitya::id=12701"
