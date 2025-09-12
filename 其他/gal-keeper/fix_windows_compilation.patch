@@ -1,0 +1,73 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Your Name <your.email@example.com>
+Date: Mon, 1 Jan 2024 12:00:00 +0800
+Subject: [PATCH 1/2] Fix Windows-specific code compilation on non-Windows platforms
+
+---
+ src/utils/launch.rs | 44 ++++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 36 insertions(+), 8 deletions(-)
+
+diff --git a/src/utils/launch.rs b/src/utils/launch.rs
+index 1234567..89abcde 100644
+--- a/src/utils/launch.rs
++++ b/src/utils/launch.rs
+@@ -1,7 +1,9 @@
+ use roga::transport::console::ConsoleTransport;
+ use roga::*;
+ use std::path::Path;
+ use std::process::Command;
+ use std::thread;
+ use std::time::{Duration, SystemTime, UNIX_EPOCH};
+ use sysinfo::{Pid, ProcessesToUpdate, System};
+ use tauri::{AppHandle, Manager};
++#[cfg(windows)]
+ use winapi::um::winuser::{GetForegroundWindow, GetWindowThreadProcessId};
+@@ -70,6 +72,7 @@ impl Monitor {
+             system.refresh_processes(ProcessesToUpdate::All, true);
+ 
+             if system.process(self.pid.unwrap()).is_some() {
++                #[cfg(windows)]
+                 if self.is_window_active().unwrap_or(false) {
+                     self.app_handle
+                         .emit_all(
+@@ -82,6 +85,18 @@ impl Monitor {
+                             msg
+                         })?;
+                 }
++                #[cfg(not(windows))]
++                {
++                    self.app_handle
++                        .emit_all(
++                            "increase",
++                            (self.id.clone(), self.start_time, get_secs_timestamp()),
++                        )
++                        .map_err(|e| {
++                            let msg = format!("Failed to emit event: {}", e);
++                            l_error!(self.logger, "{}", msg);
++                            msg
++                        })?;
++                }
+                 thread::sleep(Duration::from_secs(1));
+             } else if !self.is_child {
+                 system.refresh_processes(ProcessesToUpdate::All, true);
+@@ -124,6 +139,7 @@ impl Monitor {
+         }
+     }
+ 
++    #[cfg(windows)]
+     fn is_window_active(&self) -> Result<bool, String> {
+         if self.pid.is_none() {
+             return Ok(false);
+@@ -151,6 +167,12 @@ impl Monitor {
+         l_record!(self.logger, "Is window active: {}", result);
+         Ok(result)
+     }
++
++    #[cfg(not(windows))]
++    fn is_window_active(&self) -> Result<bool, String> {
++        // 在非 Windows 平台上，我们无法确定窗口是否活动，所以返回 false
++        Ok(false)
++    }
+ }
+ 
+ #[tauri::command]

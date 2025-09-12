@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Your Name <your.email@example.com>
+Date: Mon, 1 Jan 2024 12:00:00 +0800
+Subject: [PATCH 2/2] Fix error type mismatch in open_with_explorer for Linux
+
+---
+ src/utils/details.rs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/utils/details.rs b/src/utils/details.rs
+index 1234567..89abcde 100644
+--- a/src/utils/details.rs
++++ b/src/utils/details.rs
+@@ -94,7 +94,7 @@ pub fn open_with_explorer(directory: &str) -> Result<(), String> {
+ 
+ #[cfg(target_os = "linux")]
+ #[tauri::command]
+-pub fn open_with_explorer(directory: &str) -> Result<(), &str> {
++pub fn open_with_explorer(directory: &str) -> Result<(), String> {
+     Command::new("xdg-open")
+         .arg(directory)
+         .spawn()

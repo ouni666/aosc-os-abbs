@@ -1,0 +1,44 @@
+--- a/src/utils/fs.rs
++++ b/src/utils/fs.rs
+@@ -1,6 +1,5 @@
+ use serde::{Deserialize, Serialize};
+ use std::fs;
+ use std::path::Path;
+-use std::process::Command;
+ use tauri::command;
+ 
+ #[derive(Debug, Serialize, Deserialize)]
+@@ -19,6 +18,8 @@ pub struct MoveResult {
+ /// 操作结果
+ #[command]
+ pub async fn open_directory(dir_path: String) -> Result<(), String> {
++    use std::process::Command;
++    
+     // 首先检查路径是否存在
+     if !Path::new(&dir_path).exists() {
+         return Err(format!("路径不存在且无法创建: {}", dir_path));
+@@ -46,6 +47,24 @@ pub async fn open_directory(dir_path: String) -> Result<(), String> {
+             }
+         }
+     }
++
++    #[cfg(target_os = "macos")]
++    {
++        let result = Command::new("open").arg(&dir_path).spawn();
++        match result {
++            Ok(_) => Ok(()),
++            Err(e) => Err(format!("无法打开目录 '{}': {}", dir_path, e)),
++        }
++    }
++
++    #[cfg(target_os = "linux")]
++    {
++        let result = Command::new("xdg-open").arg(&dir_path).spawn();
++        match result {
++            Ok(_) => Ok(()),
++            Err(e) => Err(format!("无法打开目录 '{}': {}", dir_path, e)),
++        }
++    }
+ }
+ 
+ /// 移动备份文件夹到新位置
