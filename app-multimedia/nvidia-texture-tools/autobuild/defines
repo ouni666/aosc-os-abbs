@@ -1,0 +1,10 @@
+PKGNAME=nvidia-texture-tools
+PKGSEC=libs
+PKGDES="Texture processing tools with support for Direct3D 10 and 11 formats"
+
+ABTYPE=cmake
+
+CMAKE_AFTER=(
+  "-DCMAKE_BUILD_TYPE=Release"
+  "-DBUILD_SHARED_LIBS=ON"
+)
