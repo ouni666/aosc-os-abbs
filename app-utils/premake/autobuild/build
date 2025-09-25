@@ -1,0 +1,9 @@
+# build script adapted from Arch Linux and Fedora
+abinfo "Building premake ..."
+(
+  unzip premake-5.0.0-beta7-src.zip
+  make -f Bootstrap.mak linux
+)
+
+abinfo "Installing premake ..."
+install -Dvm755 "$SRCDIR"/bin/release/premake5 "$PKGDIR"/usr/bin/premake5
