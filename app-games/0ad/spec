@@ -1,6 +1,0 @@
-VER=0.27.1
-SRCS="tbl::https://sourceforge.net/projects/zero-ad/files/releases/0ad-${VER}-unix-build.tar.xz \
-      file::rename=data.tar.xz::https://sourceforge.net/projects/zero-ad/files/releases/0ad-${VER}-unix-data.tar.xz"
-CHKSUMS="sha256::a0a5355eeb5968d24f283770736150d974dafecba07754d4662707dc17016bfb \
-         sha256::837e2d6ddf138b025fc02017245d7581a4bb84fd94b42c0e605d321b7017a998"
-CHKUPDATE="anitya::id=5830"
