@@ -33,5 +33,7 @@ install -vm755 "$SRCDIR"/target/release/libzluda_trace_dnn.so "$PKGDIR"/usr/lib/
 install -vm755 "$SRCDIR"/target/release/libzluda_trace_fft.so "$PKGDIR"/usr/lib/
 install -vm755 "$SRCDIR"/target/release/libzluda_trace_ml.so "$PKGDIR"/usr/lib/
 install -vm755 "$SRCDIR"/target/release/libzluda_trace_sparse.so "$PKGDIR"/usr/lib/
-install -vm755 "$SRCDIR"/target/release/ptxas "$PKGDIR"/usr/lib/
-install -vm755 "$SRCDIR"/target/release/zluda_ld "$PKGDIR"/usr/lib/
+
+install -dvm755 "$PKGDIR"/usr/bin/
+install -vm755 "$SRCDIR"/target/release/ptxas "$PKGDIR"/usr/bin/
+install -vm755 "$SRCDIR"/target/release/zluda_ld "$PKGDIR"/usr/bin/
