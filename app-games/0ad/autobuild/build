@@ -1,0 +1,59 @@
+(
+    abinfo "Configuring $PKGNAME ..."
+    cd "$SRCDIR"/libraries
+    if ! ab_match_arch "(alpha|amd64|arm*|hppa|i486|ia64|loongson*|mips*|m68k|powerpc|ppc64*|sparc*)"; then
+        NVTT_FLAGS="--without-nvtt"
+    fi
+    ./build-source-libs.sh ${NVTT_FLAGS}
+
+    cd "$SRCDIR"/build/workspaces
+    # FIXME: --without-tests, on loongarch64:
+    #
+    #   [...]: undefined reference to `__atomic_load_16'
+    #
+    # (Plus we don't even use it.)
+    ./update-workspaces.sh \
+        --bindir=/usr/bin \
+        --libdir=/usr/lib/0ad \
+        --datadir=/usr/share/0ad/data \
+        --without-tests ${NVTT_FLAGS}
+)
+
+(
+    abinfo "Building $PKGNAME ..."
+    cd "$SRCDIR"/build/workspaces/gcc
+    make verbose=1
+)
+
+abinfo "Creating installation directories ..."
+install -dv "$PKGDIR"/usr/{bin,lib/0ad,share/0ad/data/mods/public}
+
+abinfo "Installing binaries ..."
+install -Dvm755 "$SRCDIR"/binaries/system/pyrogenesis \
+    "$PKGDIR"/usr/bin
+install -Dvm755 "$SRCDIR"/binaries/system/*.so \
+    "$PKGDIR"/usr/lib/0ad
+
+abinfo "Installing localisation data ..."
+cp -av "$SRCDIR"/binaries/data/l10n/ \
+    "$PKGDIR"/usr/share/0ad/data/
+
+abinfo "Installing launcher script, .desktop entry, and AppData ..."
+install -Dvm755 "$SRCDIR"/build/resources/0ad.sh \
+    "$PKGDIR"/usr/bin/0ad
+install -Dvm644 "$SRCDIR"/build/resources/0ad.desktop \
+    "$PKGDIR"/usr/share/applications/0ad.desktop
+install -Dvm644 "$SRCDIR"/build/resources/0ad.png \
+    "$PKGDIR"/usr/share/pixmaps/0ad.png
+install -Dvm644 "$SRCDIR"/build/resources/0ad.appdata.xml \
+    "$PKGDIR"/usr/share/appdata/0ad.appdata.xml
+
+abinfo "Installing game data ..."
+tar xvf "$SRCDIR"/../data.tar.xz
+install -dv "$PKGDIR"/usr/share/0ad/
+cp -rv "$SRCDIR"/0ad-$PKGVER/binaries/data \
+    "$PKGDIR"/usr/share/0ad/
+
+abinfo "Installing zh-lang mod ..."
+cp -v "$SRCDIR"/../zh-lang.zip \
+    "$PKGDIR"/usr/share/0ad/data/mods/public/
