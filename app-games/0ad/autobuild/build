@@ -50,7 +50,6 @@ install -Dvm644 "$SRCDIR"/build/resources/0ad.appdata.xml \
 
 abinfo "Installing game data ..."
 tar xvf "$SRCDIR"/../data.tar.xz
-install -dv "$PKGDIR"/usr/share/0ad/
 cp -rv "$SRCDIR"/0ad-$PKGVER/binaries/data \
     "$PKGDIR"/usr/share/0ad/
 
