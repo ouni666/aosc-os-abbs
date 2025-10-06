@@ -1,0 +1,6 @@
+BASE_VER="0.I"
+DATE_VER="2025.10.06.0345"
+VER="${BASE_VER}.${DATE_VER}"
+SRCS="tbl::https://github.com/CleverRaven/Cataclysm-DDA/archive/refs/tags/cdda-${BASE_VER}-${DATE_VER//./-}.tar.gz"
+CHKSUMS="sha256::9c7b7859383e80e3ff6a680822ecc1b746aa348caf07b0377b8f9d7c1397e98e"
+CHKUPDATE="anitya::id=192505"
