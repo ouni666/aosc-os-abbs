@@ -1,0 +1,7 @@
+PKGNAME=python-pymupdf
+PKGSEC=python
+PKGDEP="python-3 mupdf"
+BUILDDEP="setuptools swig python-build distro python-installer pypsutil systemd python-clang"
+PKGDES="Python bindings for MuPDF's rendering library"
+
+ABTYPE=pep517

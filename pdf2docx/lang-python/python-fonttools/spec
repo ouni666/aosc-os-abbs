@@ -1,0 +1,4 @@
+VER=4.60.1
+SRCS="pypi::version=$VER::fonttools"
+CHKSUMS="sha256::ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+CHKUPDATE="anitya::id=45258"

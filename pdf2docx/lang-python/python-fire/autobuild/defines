@@ -1,0 +1,8 @@
+PKGNAME=python-fire
+PKGSEC=python
+PKGDEP="python-3 termcolor"
+BUILDDEP="setuptools python-build python-installer"
+PKGDES="A library for automatically generating command line interfaces"
+
+ABTYPE=pep517
+ABHOST=noarch

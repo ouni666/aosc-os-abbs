@@ -1,0 +1,9 @@
+PKGNAME=python-clang
+PKGSEC=python
+PKGDEP="python-3"
+BUILDDEP="python-build scikit-build-core"
+PKGDES="Python bindings for clang"
+
+ABTYPE=pep517
+
+ABHOST=noarch

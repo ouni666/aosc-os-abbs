@@ -1,0 +1,8 @@
+PKGNAME=python-fonttools
+PKGSEC=python
+PKGDEP="python-3 brotli lxml python-lz4 matplotlib pyqt5 reportlab scipy sympy"
+BUILDDEP="setuptools cython python-build python-installer"
+PKGDES="A library to manipulate font files from Python"
+
+ABTYPE=pep517
+ABHOST=noarch
