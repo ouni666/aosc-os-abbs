@@ -1,0 +1,5 @@
+PKGNAME=flare-game
+PKGSEC=game
+PKGDEP=""
+BUILDDEP=""
+PKGDES="Fantasy action RPG using the FLARE engine"

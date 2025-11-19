@@ -1,0 +1,7 @@
+VER=1.14+git20251101
+SRCS="git::rename=flare-engine;commit=37e480097d68879ae85647daf79cc64dbb7f543e::https://github.com/flareteam/flare-engine \
+      git::rename=flare-game;commit=af903a98656005b68b05438f5ef2ff6f8257144f::https://github.com/flareteam/flare-game"
+CHKSUMS="SKIP \
+         SKIP"
+CHKUPDATE="anitya::id=21434"
+SUBDIR="flare-engine"
