@@ -1,3 +1,4 @@
-abinfo "Building flare-engine ..."
-
+abinfo "Moveing flare-game file ..."
+mkdir
+cp -av "$PKGDIR"/usr/share/games/flare/ "$PKGDIR"/usr/share/
 
