@@ -1,0 +1,4 @@
+VER=0.8.80
+SRCS="git::commit=v$VER::https://github.com/markusmoenig/Eldiron"
+CHKSUMS="SKIP"
+CHKUPDATE="anitya::id=386935"

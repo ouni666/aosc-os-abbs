@@ -1,0 +1,9 @@
+PKGNAME=eldiron
+PKGSEC=devel
+PKGDEP="gtk-3"
+BUILDDEP="rustc llvm"
+PKGDES="Definitive next-gen tool for creating classic RPGs in both 2D and 3D"
+
+ABTYPE=rust
+
+USECLANG=1
