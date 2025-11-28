@@ -1,0 +1,18 @@
+PKGNAME=zydis
+PKGSEC=libs
+PKGDEP="zycore-c"
+BUILDDEP=""
+PKGDES="Fast and lightweight x86/x86-64 disassembler and code generation library"
+
+ABTYPE=cmake
+
+CMAKE_AFTER=(
+    -DCMAKE_BUILD_TYPE='None'
+    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+    -DZYDIS_BUILD_SHARED_LIB=ON
+    -DZYDIS_BUILD_TESTS=OFF
+    -DZYAN_SYSTEM_ZYCORE=ON
+    -DZYDIS_BUILD_MAN=OFF
+    -DZYDIS_BUILD_DOXYGEN=OFF
+)

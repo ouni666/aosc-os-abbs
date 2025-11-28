@@ -1,0 +1,12 @@
+PKGNAME=zycore-c
+PKGSEC=libs
+PKGDEP="glibc"
+BUILDDEP=""
+PKGDES="Zyan Core Library for C"
+
+ABTYPE=cmake
+
+CMAKE_AFTER=(
+    -DCMAKE_INSTALL_PREFIX=/usr
+    -DZYCORE_BUILD_SHARED_LIB=ON
+)
