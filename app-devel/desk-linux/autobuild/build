@@ -1,0 +1,17 @@
+abinfo "Creating installation directories ..."
+install -dv "$PKGDIR"/usr/share/desk-linux/
+
+abinfo "Installing files ..."
+cp -av "$SRCDIR"/* "$PKGDIR"/usr/share/desk-linux/
+
+abinfo "Creating starting files"
+cd "$PKGDIR"/usr/share/desk-linux/
+./install.sh
+
+abinfo "Installing starting files"
+mkdir -pv "$PKGDIR"/usr/bin
+ln -sv /usr/share/desk-linux/start_desk.sh "$PKGDIR"/usr/bin/start_desk.sh
+chmod +x "$PKGDIR"/usr/share/desk-linux/start_desk.sh
+
+mkdir -pv "$PKGDIR"/usr/share/applications/
+cp -av "$PKGDIR"/usr/share/desk-linux/desk.desktop "$PKGDIR"/usr/share/applications/

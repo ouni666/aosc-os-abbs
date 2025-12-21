@@ -1,0 +1,5 @@
+PKGNAME=desk-linux
+PKGSEC=devel
+PKGDEP="openjdk"
+BUILDDEP=""
+PKGDES="Multi functional desktop tool software"
