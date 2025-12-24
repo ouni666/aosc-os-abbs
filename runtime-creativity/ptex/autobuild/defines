@@ -1,0 +1,15 @@
+PKGNAME=ptex
+PKGSEC=libs
+PKGDEP="zlib libdeflate"
+BUILDDEP=""
+PKGDES="Per-Face Texture Mapping for Production Rendering"
+
+ABTYPE=cmakeninja
+
+CMAKE_AFTER=(
+    "-DBUILD_TESTING=OFF"
+    "-DPTEX_BUILD_SHARED_LIBS=ON"
+    "-DPTEX_BUILD_STATIC_LIBS=OFF"
+    "-DPTEX_BUILD_DOCS=OFF"
+    "-L"
+)

@@ -1,0 +1,28 @@
+From 8545d4f674f3df881cccfb0af9fb76356a791009 Mon Sep 17 00:00:00 2001
+From: ouni666 <fangwenbin@vip.qq.com>
+Date: Wed, 24 Dec 2025 12:10:11 +0800
+Subject: [PATCH] fix find libdeflate
+
+---
+ CMakeLists.txt | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 367d0f2..94c9d45 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -33,7 +33,10 @@ enable_testing()
+ # Setup platform-specific threading flags.
+ find_package(Threads REQUIRED)
+ 
+-find_package(libdeflate REQUIRED)
++add_library(libdeflate::libdeflate_shared SHARED IMPORTED GLOBAL)
++set_target_properties(libdeflate::libdeflate_shared PROPERTIES IMPORTED_LOCATION "/usr/lib/libdeflate.so.0" INTERFACE_INCLUDE_DIRECTORIES "/usr/include")
++add_library(libdeflate::libdeflate_static INTERFACE IMPORTED GLOBAL)
++set_target_properties(libdeflate::libdeflate_static PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "/usr/include")
+ 
+ if (NOT DEFINED PTEX_SHA)
+     # Query git for current commit ID
+-- 
+2.52.0
+
