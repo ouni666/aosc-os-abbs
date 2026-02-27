@@ -1,0 +1,8 @@
+PKGNAME=openshadinglanguage
+PKGSEC=libs
+PKGDEP="openimageio ilmbase imath flex pugixml partio numpy freetype libpng libtiff zlib ncurses qt-6"
+BUILDDEP="llvm pybind11 python-3 robin-map"
+PKGDES="Advanced shading language for production GI renderers"
+
+
+#（可选）对于 NVIDIA GPU 上的 GPU 渲染:OptiX 7.0 或更高版本。Cuda 9.0 或更高版本。建议使用 11.0 或更高版本。

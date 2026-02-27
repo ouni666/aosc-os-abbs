@@ -1,0 +1,22 @@
+PKGNAME="f3d"
+PKGSEC="graphics"
+PKGDEP="vtk netcdf freetype openexr alembic assimp \
+        opencascade eigen-3 libtiff python-3 hdf5 \
+        draco openjdk libwebp utfcpp"
+BUILDDEP="nlohmann-json pybind11"
+PKGDES="A viewer supporting glTF, USD, STL, STEP, PLY, OBJ, FBX, and Alembic 3D models"
+CMAKE_AFTER=(
+	-DF3D_BINDINGS_C=ON
+	-DF3D_BINDINGS_JAVA=ON
+	-DF3D_BINDINGS_PYTHON=ON
+	-DF3D_BINDINGS_PYTHON_GENERATE_STUBS=OFF
+	-DF3D_MODULE_EXR=ON
+	-DF3D_MODULE_WEBP=OFF
+	-DF3D_MODULE_RAYTRACING=OFF
+	-DF3D_PLUGIN_BUILD_ALEMBIC=ON
+	-DF3D_PLUGIN_BUILD_ASSIMP=ON
+	-DF3D_PLUGIN_BUILD_VDB=ON
+	-DF3D_PLUGIN_BUILD_OCCT=ON
+	-DF3D_PLUGIN_BUILD_DRACO=ON
+	-DF3D_PLUGIN_BUILD_USD=OFF
+)

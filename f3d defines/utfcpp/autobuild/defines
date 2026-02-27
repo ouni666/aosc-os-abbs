@@ -1,0 +1,7 @@
+PKGNAME=utfcpp
+PKGSEC=libdevel
+PKGDES="A C/C++ library for handling UTF-8 encoded strings"
+PKGPROV="utf8cpp"
+
+ABHOST=noarch
+CMAKE_AFTER="UTF8CPP_ENABLE_TESTS=OFF"
