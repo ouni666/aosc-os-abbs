@@ -1,0 +1,5 @@
+#FIXME: QA (E324): non-executable shared object(s) found in /usr/lib
+# /var/cache/acbs/build/acbs.ae3gz19u/openvdb/abdist/usr/lib/libopenvdb_ax.so.13.0.0
+# /var/cache/acbs/build/acbs.ae3gz19u/openvdb/abdist/usr/lib/libopenvdb.so.13.0.0
+chmod -v +x "$PKGDIR"/usr/lib/libopenvdb_ax.so.*
+chmod -v +x "$PKGDIR"/usr/lib/libopenvdb.so.*
