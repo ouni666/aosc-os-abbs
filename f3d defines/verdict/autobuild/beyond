@@ -1,3 +1,0 @@
-#FIXME: QA (E324): non-executable shared object(s) found in /usr/lib
-# /var/cache/acbs/build/acbs.5ov8apor/verdict/abdist/usr/lib/libverdict.so.1.4.4
-chmod -v +x "$PKGDIR"/usr/lib/libverdict.so.*
